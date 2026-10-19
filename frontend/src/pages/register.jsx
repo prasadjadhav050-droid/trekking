@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Link } from 'react-router-dom';
 import axios from "axios"
+import config from '../config';
 const Register = () => {
   const schema = z.object({
     name: z.string().min(3),
