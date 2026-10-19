@@ -1,13 +1,9 @@
 const config = {
-    DATABASE_URL: process.env.NODE_ENV === 'development'
-        ? process.env.DATABASE_LOCAL_URL
-        : process.env.DATABASE_LIVE_URL,
-    CORS_ORIGIN: process.env.NODE_ENV === 'development'
-        ? process.env.FRONTEND_LOCAL_URL
-        : process.env.FRONTEND_LIVE_URL,
-    ENV: process.env.NODE_ENV === 'development'
-        ? 'development'
-        : 'production',
+    BACKEND_URL: import.meta.env.VITE_NODE_ENV === 'development'
+        ? import.meta.env.VITE_BACKEND_LOCAL_URL
+        : import.meta.env.VITE_BACKEND_LIVE_URL,
+    NODE_ENV: import.meta.env.VITE_NODE_ENV === 'development'
+        ? "development"
+        : "production",
 }
-
-module.exports = config
+export default config
